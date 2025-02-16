@@ -11,6 +11,9 @@ func ListsEqual(list1, list2 []int) bool {
 	if Empty(list1) || Empty(list2) {
 		return false
 	}
-	return list1[0] == list2[0] && ListsEqual(list1[1:], list2[1:])
+	if list1[0] == list2[0] {
+		return ListsEqual(list1[1:], list2[1:])
+	}
+	return false
 
 }
